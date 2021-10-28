@@ -18,7 +18,7 @@ namespace ThreeOS
 
         protected override void Run()
         {
-            Console.Write("root@ThreeOS > ");
+            Console.WriteLine("root@ThreeOS > ");
             var input = Console.ReadLine();
 
             if (input == "help")
@@ -29,7 +29,7 @@ namespace ThreeOS
                 Console.WriteLine("| clear      | Clear the Console                  |");
                 Console.WriteLine("| shutdown   | Shut down the PC                   |");
                 Console.WriteLine("| restart    | Restart the PC                     |");
-                Console.WriteLine("----------------------------------------------------");
+                Console.WriteLine("---------------------------------------------------");
 
             } else if (input == "sysinfo")
             {
