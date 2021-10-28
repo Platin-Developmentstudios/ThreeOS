@@ -23,12 +23,36 @@ namespace ThreeOS
 
             if(input == "help")
             {
-                Console.WriteLine("- sysinfo | Show infos about the ThreeOS build");
+
+                Console.WriteLine("---------------------------------------------------");
+                Console.WriteLine("| sysinfo    | Show infos about the ThreeOS build |");
+                Console.WriteLine("| shutdown   | Shut down the PC                   |");
+                Console.WriteLine("| restart    | Restart the PC                     |");
+                Console.WriteLine("----------------------------------------------------");
+
             } else if(input == "sysinfo")
             {
-                Console.WriteLine("User    | root@ThreeOS");
-                Console.WriteLine("OS      | ThreeOS Beta");
-                Console.WriteLine("Version | Build 2810");
+
+                Console.WriteLine("--------------------------");
+                Console.WriteLine("| User    | root@ThreeOS |");
+                Console.WriteLine("| OS      | ThreeOS Beta |");
+                Console.WriteLine("| Version | Build 2810   |");
+                Console.WriteLine("--------------------------");
+
+            } else if(input == "shutdown")
+            {
+
+                Console.WriteLine("Shutdowning PC...", ConsoleColor.Red);
+                System.Threading.Thread.Sleep(3000);
+                Sys.Power.Shutdown();
+
+            } else if(input == "restart")
+            {
+
+                Console.WriteLine("Restarting PC...", ConsoleColor.Red);
+                System.Threading.Thread.Sleep(3000);
+                Sys.Power.Reboot();
+
             }
         }
     }
