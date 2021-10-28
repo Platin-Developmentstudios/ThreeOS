@@ -21,16 +21,17 @@ namespace ThreeOS
             Console.Write("root@ThreeOS > ");
             var input = Console.ReadLine();
 
-            if(input == "help")
+            if (input == "help")
             {
 
                 Console.WriteLine("---------------------------------------------------");
                 Console.WriteLine("| sysinfo    | Show infos about the ThreeOS build |");
+                Console.WriteLine("| clear      | Clear the Console                  |");
                 Console.WriteLine("| shutdown   | Shut down the PC                   |");
                 Console.WriteLine("| restart    | Restart the PC                     |");
                 Console.WriteLine("----------------------------------------------------");
 
-            } else if(input == "sysinfo")
+            } else if (input == "sysinfo")
             {
 
                 Console.WriteLine("--------------------------");
@@ -39,14 +40,19 @@ namespace ThreeOS
                 Console.WriteLine("| Version | Build 2810   |");
                 Console.WriteLine("--------------------------");
 
-            } else if(input == "shutdown")
+            } else if (input == "clear")
+            {
+
+                Console.Clear();
+
+            } else if (input == "shutdown")
             {
 
                 Console.WriteLine("Shutdowning PC...", ConsoleColor.Red);
                 System.Threading.Thread.Sleep(3000);
                 Sys.Power.Shutdown();
 
-            } else if(input == "restart")
+            } else if (input == "restart")
             {
 
                 Console.WriteLine("Restarting PC...", ConsoleColor.Red);
