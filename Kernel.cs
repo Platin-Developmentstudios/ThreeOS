@@ -2,15 +2,24 @@
 using System.Collections.Generic;
 using System.Text;
 using Sys = Cosmos.System;
+using Cosmos.System.Graphics;
+using System.Drawing;
 
 namespace ThreeOS
 {
     public class Kernel : Sys.Kernel
     {
+
+        //Canvas canvas;
+
         protected override void BeforeRun()
         {
+
+            //canvas = FullScreenCanvas.GetFullScreenCanvas();
+            //canvas.Clear(Color.Wheat);
+
             Console.WriteLine("------------------------------------------------------------------", ConsoleColor.Cyan);
-            Console.WriteLine("| ThreeOS Beta Build 2810 | Created By Platin Developmentstudios |", ConsoleColor.Cyan);
+            Console.WriteLine("| ThreeOS Beta Build 3010 | Created By Platin Developmentstudios |", ConsoleColor.Cyan);
             Console.WriteLine("------------------------------------------------------------------", ConsoleColor.Cyan);
             Console.WriteLine("| To see all commands, type in help                              |", ConsoleColor.Cyan);
             Console.WriteLine("------------------------------------------------------------------", ConsoleColor.Cyan);
@@ -34,11 +43,15 @@ namespace ThreeOS
             } else if (input == "sysinfo")
             {
 
-                Console.WriteLine("--------------------------");
-                Console.WriteLine("| User    | root@ThreeOS |");
-                Console.WriteLine("| OS      | ThreeOS Beta |");
-                Console.WriteLine("| Version | Build 2810   |");
-                Console.WriteLine("--------------------------");
+                Console.WriteLine("----------------------------");
+                Console.WriteLine("| User      | root@ThreeOS |");
+                Console.WriteLine("| OS        | ThreeOS Beta |");
+                Console.WriteLine("| Version   | Build 3010   |");
+                Console.WriteLine("----------------------------");
+                Console.WriteLine(" ");
+                Console.WriteLine("Hardware:");
+                Console.WriteLine($"Total RAM: {Cosmos.Core.CPU.GetAmountOfRAM()} MB ");
+                Console.WriteLine($"CPU: {Cosmos.Core.CPU.GetCPUVendorName()}");
 
             } else if (input == "clear")
             {
