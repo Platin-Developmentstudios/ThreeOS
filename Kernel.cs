@@ -4,7 +4,7 @@ using System.Text;
 using System.Drawing;
 using System.Collections.Generic;
 //using ThreeOS.FileSystem
-using ThreeOS.System.Console
+using ThreeOS.System.Console;
 using Sys = Cosmos.System;
 using Cosmos.System.Graphics;
 
