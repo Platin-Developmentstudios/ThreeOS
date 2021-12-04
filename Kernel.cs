@@ -1,10 +1,10 @@
 using System;
-using System.IO
+using System.IO;
 using System.Text;
 using System.Drawing;
 using System.Collections.Generic;
 //using ThreeOS.FileSystem
-using ThreeOS.System.Console
+using ThreeOS.System.Console;
 using Sys = Cosmos.System;
 using Cosmos.System.Graphics;
 
@@ -27,7 +27,7 @@ namespace ThreeOS
             Console.WriteLine("| To see all commands, type in help                              |", ConsoleColor.Magenta);
             Console.WriteLine("------------------------------------------------------------------", ConsoleColor.Magenta);
             
-            ConsoleInfo.Wait("Initialize FileSystem...")
+            ConsoleInfo.Wait("Initialize FileSystem...");
             var fs = new Sys.FileSystem.CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
             ConsoleInfo.OK("FileSystem Initialized");
@@ -41,7 +41,7 @@ namespace ThreeOS
               Directory.CreateDirectory(@"0:\system\mnt");
               Directory.CreateDirectory(@"0:\system\cfg");
               Directory.CreateDirectory(@"0:\system\var");
-              ConsoleInfo.Info("Directorys Created.")
+              ConsoleInfo.Info("Directorys Created.");
             }
             ConsoleInfo.OK("System Check");
         }
@@ -103,7 +103,7 @@ namespace ThreeOS
                 Sys.Power.Reboot();
 
             } else {
-              ConsoleInfo.Error("Command not Found")
+              ConsoleInfo.Error("Command not Found");
             }
         }
     }
