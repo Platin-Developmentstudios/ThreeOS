@@ -1,7 +1,10 @@
-﻿using System;
+using System;
+using System.IO
 using System.Text;
 using System.Drawing;
 using System.Collections.Generic;
+//using ThreeOS.FileSystem
+using ThreeOS.System.Console
 using Sys = Cosmos.System;
 using Cosmos.System.Graphics;
 
@@ -9,14 +12,29 @@ namespace ThreeOS
 {
     public class Kernel : Sys.Kernel
     {
+      
+        public static string CurrentDirectory = @"0:\";
+        public static string CurrentUser = "root";
+        public static string BuildVer = "0412";
+        
         protected override void BeforeRun()
         {
             Console.BackgroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("------------------------------------------------------------------", ConsoleColor.Magenta);
-            Console.WriteLine("| ThreeOS Beta Build 3110 | Created By Platin Developmentstudios |", ConsoleColor.Magenta);
+            Console.WriteLine("| ThreeOS Beta Build 0412 | Created By Platin Developmentstudios |", ConsoleColor.Magenta);
             Console.WriteLine("------------------------------------------------------------------", ConsoleColor.Magenta);
             Console.WriteLine("| To see all commands, type in help                              |", ConsoleColor.Magenta);
             Console.WriteLine("------------------------------------------------------------------", ConsoleColor.Magenta);
+            
+            ConsoleInfo.Wait("Initialize FileSystem...")
+            var fs = new Sys.FileSystem.CosmosVFS();
+            Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
+            ConsoleInfo.OK("FileSystem Initialized");
+            
+            if (!Directory.Exists(@"0:\system"))
+            {
+              Directory.CreateDirectory(@"0:\system");
+            }
         }
 
         protected override void Run()
@@ -41,7 +59,7 @@ namespace ThreeOS
                 Console.WriteLine("----------------------------", ConsoleColor.White);
                 Console.WriteLine("| User      | root@ThreeOS |", ConsoleColor.White);
                 Console.WriteLine("| OS        | ThreeOS Beta |", ConsoleColor.White);
-                Console.WriteLine("| Version   | Build 3110   |", ConsoleColor.White);
+                Console.WriteLine("| Version   | Build 0412   |", ConsoleColor.White);
                 Console.WriteLine("----------------------------", ConsoleColor.White);
                 Console.WriteLine(" ");
                 Console.WriteLine("Hardware:", ConsoleColor.White);
