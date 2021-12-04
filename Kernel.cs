@@ -1,10 +1,10 @@
 using System;
-using System.IO;
+using System.IO
 using System.Text;
 using System.Drawing;
 using System.Collections.Generic;
 //using ThreeOS.FileSystem
-using ThreeOS.System.Console;
+using ThreeOS.System.Console
 using Sys = Cosmos.System;
 using Cosmos.System.Graphics;
 
@@ -13,8 +13,9 @@ namespace ThreeOS
     public class Kernel : Sys.Kernel
     {
       
-        public static string CurrentDirectory = @"0:\";
-        public static string CurrentUser = "root";
+        public static string CurrentDirectory = @"0:\system\mnt";
+        public static string ComputerName = "ThreeOS";
+        public static string CurrentUser = "admin";
         public static string BuildVer = "0412";
         
         protected override void BeforeRun()
@@ -31,16 +32,31 @@ namespace ThreeOS
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
             ConsoleInfo.OK("FileSystem Initialized");
             
+            ConsoleInfo.Wait("Checking System...");
             if (!Directory.Exists(@"0:\system"))
             {
+              ConsoleInfo.Wait("Creating Directorys...");
               Directory.CreateDirectory(@"0:\system");
+              Directory.CreateDirectory(@"0:\system\dev");
+              Directory.CreateDirectory(@"0:\system\mnt");
+              Directory.CreateDirectory(@"0:\system\cfg");
+              Directory.CreateDirectory(@"0:\system\var");
+              ConsoleInfo.Info("Directorys Created.")
             }
+            ConsoleInfo.OK("System Check");
         }
 
         protected override void Run()
         {
             Console.BackgroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("root@ThreeOS > ", ConsoleColor.White);
+            
+            Console.Write(CurrentUser, ConsoleColor.Yellow);
+            Console.Write("@", ConsoleColor.White);
+            Console.Write(ComputerName, ConsoleColor.Cyan);
+            Console.Write(" - ", ConsoleColor.White);
+            Console.Write(CurrentDirectory, ConsoleColor.Magenta);
+            Console.Write(" > ", ConsoleColor.White);
+            
             var input = Console.ReadLine();
 
             if (input == "help")
@@ -57,7 +73,7 @@ namespace ThreeOS
             {
 
                 Console.WriteLine("----------------------------", ConsoleColor.White);
-                Console.WriteLine("| User      | root@ThreeOS |", ConsoleColor.White);
+                Console.WriteLine("| User      | admin        |", ConsoleColor.White);
                 Console.WriteLine("| OS        | ThreeOS Beta |", ConsoleColor.White);
                 Console.WriteLine("| Version   | Build 0412   |", ConsoleColor.White);
                 Console.WriteLine("----------------------------", ConsoleColor.White);
@@ -86,6 +102,8 @@ namespace ThreeOS
                 System.Threading.Thread.Sleep(3000);
                 Sys.Power.Reboot();
 
+            } else {
+              ConsoleInfo.Error("Command not Found")
             }
         }
     }
