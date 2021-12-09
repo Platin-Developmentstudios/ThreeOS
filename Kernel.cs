@@ -36,7 +36,7 @@ namespace ThreeOS
               Directory.CreateDirectory(@"0:\system\mnt");
               Directory.CreateDirectory(@"0:\system\cfg");
               Directory.CreateDirectory(@"0:\system\var");
-              ConsoleInfo.Info("Directorys Created.");
+              // ConsoleInfo.Info("Directorys Created."); - For Debuging
             }
             // ConsoleInfo.OK("System Check"); - For Debuging
         }
