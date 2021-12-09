@@ -30,13 +30,24 @@ namespace ThreeOS
             // ConsoleInfo.Wait("Checking System..."); - For Debuging
             if (!Directory.Exists(@"0:\system"))
             {
-              // ConsoleInfo.Wait("Creating Directorys..."); - For Debuging
-              Directory.CreateDirectory(@"0:\system");
-              Directory.CreateDirectory(@"0:\system\dev");
-              Directory.CreateDirectory(@"0:\system\mnt");
-              Directory.CreateDirectory(@"0:\system\cfg");
-              Directory.CreateDirectory(@"0:\system\var");
-              // ConsoleInfo.Info("Directorys Created."); - For Debuging
+                // ConsoleInfo.Wait("Creating Directorys..."); - For Debuging
+                try
+                {
+              
+                  Directory.CreateDirectory(@"0:\system");
+                  Directory.CreateDirectory(@"0:\system\dev");
+                  Directory.CreateDirectory(@"0:\system\mnt");
+                  Directory.CreateDirectory(@"0:\system\cfg");
+                  Directory.CreateDirectory(@"0:\system\var");
+                
+                }
+                catch (Exception e)
+                {
+
+                  Console.WriteLine(e.ToString());
+
+                }
+                // ConsoleInfo.Info("Directorys Created."); - For Debuging
             }
             // ConsoleInfo.OK("System Check"); - For Debuging
         }
