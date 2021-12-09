@@ -35,4 +35,25 @@ namespace ThreeOS.System.ConsoleTools
       Console.Wrtite(text, ConsoleColor.White);
     }
   }
+
+  internal class ConsoleUtils
+  {
+    public static void logo()
+    {
+        
+         Console.WriteLine(" ********** **                                     *******    ********", ConsoleColor.Magenta);
+         Console.WriteLine("/////**/// /**                                    **/////**  **////// ", ConsoleColor.Magenta);
+         Console.WriteLine("    /**    /**      ******  *****   *****        **     //**/**       ", ConsoleColor.Magenta);
+         Console.WriteLine("    /**    /****** //**//* **///** **///**      /**      /**/*********", ConsoleColor.Magenta);
+         Console.WriteLine("    /**    /**///** /** / /*******/*******      /**      /**////////**", ConsoleColor.Magenta);
+         Console.WriteLine("    /**    /**  /** /**   /**//// /**////       //**     **        /**", ConsoleColor.Magenta);
+         Console.WriteLine("    /**    /**  /**/***   //******//******       //*******   ******** ", ConsoleColor.Magenta);
+         Console.WriteLine("    //     //   // ///     //////  //////         ///////   ////////  ", ConsoleColor.Magenta);
+         Console.WriteLine("", ConsoleColor.Magenta);
+         Console.WriteLine("  ------------------------------------------------------------------  ", ConsoleColor.Magenta);
+         Console.WriteLine("  |    Beta Version 0912  |   Created By Platin Developmentstudios |  ", ConsoleColor.Magenta);
+         Console.WriteLine("  ------------------------------------------------------------------  ", ConsoleColor.Magenta);
+         Console.WriteLine("", ConsoleColor.Green);
+    }
+  }
 }
