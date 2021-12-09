@@ -20,17 +20,16 @@ namespace ThreeOS
         
         protected override void BeforeRun()
         {
-            ConsoleUtils.logo();
 
-            // ConsoleInfo.Wait("Initialize FileSystem..."); - For Debuging
+            ConsoleInfo.Wait("Initialize FileSystem...");
             var fs = new Sys.FileSystem.CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
-            // ConsoleInfo.OK("FileSystem Initialized"); - For Debuging
+            ConsoleInfo.OK("FileSystem Initialized");
             
-            // ConsoleInfo.Wait("Checking System..."); - For Debuging
+            ConsoleInfo.Wait("Checking System..."); 
             if (!Directory.Exists(@"0:\system"))
             {
-                // ConsoleInfo.Wait("Creating Directorys..."); - For Debuging
+                ConsoleInfo.Wait("Creating Directorys...");
                 try
                 {
               
@@ -47,9 +46,11 @@ namespace ThreeOS
                   Console.WriteLine(e.ToString());
 
                 }
-                // ConsoleInfo.Info("Directorys Created."); - For Debuging
+                ConsoleInfo.Info("Directorys Created.");
             }
-            // ConsoleInfo.OK("System Check"); - For Debuging
+            ConsoleInfo.OK("System Check");
+            Console.Clear();
+            ConsoleUtils.logo();
         }
 
         protected override void Run()
