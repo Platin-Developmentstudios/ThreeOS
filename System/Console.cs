@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace ThreeOS.System.Console
+namespace ThreeOS.System.ConsoleTools
 {
   internal class ConsoleInfo
   {
