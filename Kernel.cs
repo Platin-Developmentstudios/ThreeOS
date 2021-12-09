@@ -16,26 +16,21 @@ namespace ThreeOS
         public static string CurrentDirectory = @"0:\system\mnt";
         public static string ComputerName = "ThreeOS";
         public static string CurrentUser = "admin";
-        public static string BuildVer = "0412";
+        public static string BuildVer = "0912";
         
         protected override void BeforeRun()
         {
-            Console.BackgroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("------------------------------------------------------------------", ConsoleColor.Magenta);
-            Console.WriteLine("| ThreeOS Beta Build 0412 | Created By Platin Developmentstudios |", ConsoleColor.Magenta);
-            Console.WriteLine("------------------------------------------------------------------", ConsoleColor.Magenta);
-            Console.WriteLine("| To see all commands, type in help                              |", ConsoleColor.Magenta);
-            Console.WriteLine("------------------------------------------------------------------", ConsoleColor.Magenta);
-            
-            ConsoleInfo.Wait("Initialize FileSystem...");
+            ConsoleUtils.logo();
+
+            // ConsoleInfo.Wait("Initialize FileSystem..."); - For Debuging
             var fs = new Sys.FileSystem.CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
-            ConsoleInfo.OK("FileSystem Initialized");
+            // ConsoleInfo.OK("FileSystem Initialized"); - For Debuging
             
-            ConsoleInfo.Wait("Checking System...");
+            // ConsoleInfo.Wait("Checking System..."); - For Debuging
             if (!Directory.Exists(@"0:\system"))
             {
-              ConsoleInfo.Wait("Creating Directorys...");
+              // ConsoleInfo.Wait("Creating Directorys..."); - For Debuging
               Directory.CreateDirectory(@"0:\system");
               Directory.CreateDirectory(@"0:\system\dev");
               Directory.CreateDirectory(@"0:\system\mnt");
@@ -43,7 +38,7 @@ namespace ThreeOS
               Directory.CreateDirectory(@"0:\system\var");
               ConsoleInfo.Info("Directorys Created.");
             }
-            ConsoleInfo.OK("System Check");
+            // ConsoleInfo.OK("System Check"); - For Debuging
         }
 
         protected override void Run()
@@ -75,7 +70,7 @@ namespace ThreeOS
                 Console.WriteLine("----------------------------", ConsoleColor.White);
                 Console.WriteLine("| User      | admin        |", ConsoleColor.White);
                 Console.WriteLine("| OS        | ThreeOS Beta |", ConsoleColor.White);
-                Console.WriteLine("| Version   | Build 0412   |", ConsoleColor.White);
+                Console.WriteLine("| Version   | Build 0912   |", ConsoleColor.White);
                 Console.WriteLine("----------------------------", ConsoleColor.White);
                 Console.WriteLine(" ");
                 Console.WriteLine("Hardware:", ConsoleColor.White);
