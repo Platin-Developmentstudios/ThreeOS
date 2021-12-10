@@ -14,8 +14,8 @@ namespace ThreeOS
       
         public static string CurrentDirectory = @"0:\system\mnt";
         public static string ComputerName = "ThreeOS";
-        public static string CurrentUser = "admin";
-        public static string BuildVer = "0912";
+        public static string CurrentUser = "Admin";
+        public static string BuildVer = "1012";
         
         protected override void BeforeRun()
         {
@@ -56,55 +56,67 @@ namespace ThreeOS
         {
             Console.BackgroundColor = ConsoleColor.DarkGray;
             
-            Console.Write(CurrentUser, ConsoleColor.Yellow);
-            Console.Write("@", ConsoleColor.White);
-            Console.Write(ComputerName, ConsoleColor.Cyan);
-            Console.Write(" - ", ConsoleColor.White);
-            Console.Write(CurrentDirectory, ConsoleColor.Magenta);
-            Console.Write(" > ", ConsoleColor.White);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write(CurrentUser);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("@");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(ComputerName);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(" - ");
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.Write(CurrentDirectory);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(" > ");
             
             var input = Console.ReadLine();
 
             if (input == "help")
             {
-
-                Console.WriteLine("---------------------------------------------------", ConsoleColor.White);
-                Console.WriteLine("| sysinfo    | Show infos about the ThreeOS build |", ConsoleColor.White);
-                Console.WriteLine("| clear      | Clear the Console                  |", ConsoleColor.White);
-                Console.WriteLine("| shutdown   | Shut down the PC                   |", ConsoleColor.White);
-                Console.WriteLine("| restart    | Restart the PC                     |", ConsoleColor.White);
-                Console.WriteLine("---------------------------------------------------", ConsoleColor.White);
+            
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("---------------------------------------------------");
+                Console.WriteLine("| sysinfo    | Show infos about the ThreeOS build |");
+                Console.WriteLine("| clear      | Clear the Console                  |");
+                Console.WriteLine("| shutdown   | Shut down the PC                   |");
+                Console.WriteLine("| restart    | Restart the PC                     |");
+                Console.WriteLine("---------------------------------------------------");
 
             } else if (input == "sysinfo")
             {
-
-                Console.WriteLine("----------------------------", ConsoleColor.White);
-                Console.WriteLine("| User      | admin        |", ConsoleColor.White);
-                Console.WriteLine("| OS        | ThreeOS Beta |", ConsoleColor.White);
-                Console.WriteLine("| Version   | Build 0912   |", ConsoleColor.White);
-                Console.WriteLine("----------------------------", ConsoleColor.White);
+            
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("----------------------------");
+                Console.WriteLine("| User      | Admin        |");
+                Console.WriteLine("| OS        | ThreeOS Beta |");
+                Console.WriteLine("| Version   | Build 1012   |");
+                Console.WriteLine("----------------------------");
                 Console.WriteLine(" ");
-                Console.WriteLine("Hardware:", ConsoleColor.White);
-                Console.WriteLine($"Total RAM: {Cosmos.Core.CPU.GetAmountOfRAM()} MB ", ConsoleColor.White);
-                Console.WriteLine($"CPU: {Cosmos.Core.CPU.GetCPUVendorName()}", ConsoleColor.White);
+                Console.WriteLine("Hardware:");
+                Console.WriteLine($"Total RAM: {Cosmos.Core.CPU.GetAmountOfRAM()} MB ");
+                Console.WriteLine($"CPU: {Cosmos.Core.CPU.GetCPUVendorName()}");
 
             } else if (input == "clear")
             {
-
-                Console.BackgroundColor = ConsoleColor.DarkGray;
+            
                 Console.Clear();
+                Console.BackgroundColor = ConsoleColor.DarkGray;
+                Console.ForegroundColor = ConsoleColor.White;
+
 
             } else if (input == "shutdown")
             {
-
-                Console.WriteLine("Shutdowning PC...", ConsoleColor.Red);
+            
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Shutdowning PC...");
                 System.Threading.Thread.Sleep(3000);
                 Sys.Power.Shutdown();
 
             } else if (input == "restart")
             {
-
-                Console.WriteLine("Restarting PC...", ConsoleColor.Red);
+            
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Restarting PC...");
                 System.Threading.Thread.Sleep(3000);
                 Sys.Power.Reboot();
 
