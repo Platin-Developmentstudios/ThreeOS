@@ -7,7 +7,7 @@ namespace ThreeOS.System.ConsoleTools
   {
     public static void logo()
     {
-         Console.ForegroundColor = ConsoleColor.Magenta;
+         Console.ForegroundColor = ConsoleColor.Cyan;
          Console.WriteLine(" ********** **                                     *******    ********", ConsoleColor.Magenta);
          Console.WriteLine("/////**/// /**                                    **/////**  **////// ", ConsoleColor.Magenta);
          Console.WriteLine("    /**    /**      ******  *****   *****        **     //**/**       ", ConsoleColor.Magenta);
@@ -17,7 +17,7 @@ namespace ThreeOS.System.ConsoleTools
          Console.WriteLine("    /**    /**  /**/***   //******//******       //*******   ******** ", ConsoleColor.Magenta);
          Console.WriteLine("    //     //   // ///     //////  //////         ///////   ////////  ", ConsoleColor.Magenta);
          Console.WriteLine("");
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor = ConsoleColor.Yellow;
          Console.WriteLine("  ------------------------------------------------------------------  ", ConsoleColor.Magenta);
          Console.WriteLine("  |    Beta Version 0412  |   Created By Platin Developmentstudios |  ", ConsoleColor.Magenta);
          Console.WriteLine("  ------------------------------------------------------------------  ", ConsoleColor.Magenta);
