@@ -15,7 +15,7 @@ namespace ThreeOS
         public static string CurrentDirectory = @"0:\system\mnt";
         public static string ComputerName = "ThreeOS";
         public static string CurrentUser = "Admin";
-        public static string BuildVer = "1012";
+        public static string BuildVer = "1112";
         
         protected override void BeforeRun()
         {
@@ -119,6 +119,12 @@ namespace ThreeOS
                 Console.WriteLine("Restarting PC...");
                 System.Threading.Thread.Sleep(3000);
                 Sys.Power.Reboot();
+
+            } else if (input == "cd")
+            {
+
+                // Work in Progress
+                ConsoleInfo.Error("Feature is available from build 1212");
 
             } else {
               ConsoleInfo.Error("Command not Found");
