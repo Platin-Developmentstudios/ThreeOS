@@ -5,7 +5,7 @@ namespace ThreeOS.System.ConsoleTools
 {
   internal class ConsoleUtils
   {
-    public static void logo()
+    public static void WriteLogo()
     {
          Console.ForegroundColor = ConsoleColor.Cyan;
          Console.WriteLine(" ********** **                                     *******    ********", ConsoleColor.Magenta);
