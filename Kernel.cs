@@ -49,7 +49,7 @@ namespace ThreeOS
             }
             ConsoleInfo.OK("System Check");
             Console.Clear();
-            ConsoleUtils.logo();
+            ConsoleUtils.WriteLogo();
         }
 
         protected override void Run()
