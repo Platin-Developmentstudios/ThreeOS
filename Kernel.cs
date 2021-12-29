@@ -12,7 +12,7 @@ namespace ThreeOS
     public class Kernel : Sys.Kernel
     {
       
-        public static string CurrentDirectory = @"0:\system\mnt";
+        public static string CurrentDirectory = @"0:\system\mnt\";
         public static string ComputerName = "ThreeOS";
         public static string CurrentUser = "Admin";
         public static string BuildVer = "2912";
@@ -131,20 +131,19 @@ namespace ThreeOS
 
             } else if​ (​input​ ​==​ ​"​ls​"​) 
  ​           { 
- ​                ​var​ ​directory_list​ ​=​ ​Directory​.​GetFiles​(​@"​0:​\system\mnt"​); 
+ ​                ​var​ ​directory_list​ ​=​ ​Directory​.​GetFiles​(​CurrentDirectory); 
  ​                ​foreach​ (​var​ ​file​ ​in​ ​directory_list​) 
  ​                { 
  ​                    ​Console​.​WriteLine​(​file​); 
  ​                } 
- ​            }  
- ​            ​if​ (​input​ ​==​ ​"​mk​file"​) 
+ ​            } else if​ (​input​ ​==​ ​"​mk​file"​) 
  ​            { 
  ​                ​Console​.​Write​(​"​File name with extension: ​"​); 
  ​                ​string​ ​filename​ ​=​ ​Console​.​ReadLine​(); 
   
  ​                ​try 
  ​                { 
- ​                    ​var​ ​file_stream​ ​=​ ​File​.​Create​(​@"​0:​\system\mnt\"​ ​+​ ​filename​); 
+ ​                    ​var​ ​file_stream​ ​=​ ​File​.​CreaCreate(CurrentDirectory ​+​ ​filename​); 
  ​                } 
  ​                ​catch​ (​Exception​ ​e​) 
  ​                { 
