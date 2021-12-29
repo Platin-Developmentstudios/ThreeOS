@@ -143,6 +143,7 @@ namespace ThreeOS
  ​                { 
  ​                    ​Console​.​WriteLine​(​file​); 
  ​                } 
+
  ​            } else if​ (​input​ ​==​ ​"​mk​file"​) 
  ​            { 
  ​                ​Console​.​Write​(​"​File name with extension: ​"​); 
@@ -157,6 +158,7 @@ namespace ThreeOS
  ​                    ​Console​.​WriteLine​(​e​.​ToString​()); 
  ​                } 
  ​                ​Console​.​WriteLine​(​"​File successfully created​"​); 
+
  ​            } else if (input == "mkdir")
              {
                  Console.WriteLine("Directory Name:");
@@ -169,9 +171,7 @@ namespace ThreeOS
                      }
                      catch(Exception e)
                      {
-
                           Console.WriteLine(e.ToString());
-
                      }
                  } else {
                      Console.WriteLine("This Directory does already exists!");
