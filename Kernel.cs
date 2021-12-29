@@ -128,7 +128,12 @@ namespace ThreeOS
 
                 Console.WriteLine("Enter the Path to the Directory");
                 string dirPath = Console.ReadLine();
-                CurrentDirectory = dirPath;
+                if (!Directory.Exists(dirPath))
+                {
+                    Console.WriteLine("This Directory doesnt exist!");
+                } else {
+                    CurrentDirectory = dirPath;
+                }
 
             } else if​ (​input​ ​==​ ​"​ls​"​) 
  ​           { 
