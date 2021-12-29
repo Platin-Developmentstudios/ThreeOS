@@ -129,7 +129,7 @@ namespace ThreeOS
                 // Work in Progress
                 ConsoleInfo.Error("Feature is available from build 3112");
 
-            } else  ​if​ (​input​ ​==​ ​"​ls​"​) 
+            } else if​ (​input​ ​==​ ​"​ls​"​) 
  ​           { 
  ​                ​var​ ​directory_list​ ​=​ ​Directory​.​GetFiles​(​@"​0:​\system\mnt"​); 
  ​                ​foreach​ (​var​ ​file​ ​in​ ​directory_list​) 
