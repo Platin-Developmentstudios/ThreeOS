@@ -15,7 +15,7 @@ namespace ThreeOS
         public static string CurrentDirectory = @"0:\system\mnt";
         public static string ComputerName = "ThreeOS";
         public static string CurrentUser = "Admin";
-        public static string BuildVer = "1112";
+        public static string BuildVer = "2912";
         
         protected override void BeforeRun()
         {
@@ -89,7 +89,7 @@ namespace ThreeOS
                 Console.WriteLine("----------------------------");
                 Console.WriteLine("| User      | Admin        |");
                 Console.WriteLine("| OS        | ThreeOS Beta |");
-                Console.WriteLine("| Version   | Build 1012   |");
+                Console.WriteLine("| Version   | Build 2912   |");
                 Console.WriteLine("----------------------------");
                 Console.WriteLine(" ");
                 Console.WriteLine("Hardware:");
@@ -124,9 +124,31 @@ namespace ThreeOS
             {
 
                 // Work in Progress
-                ConsoleInfo.Error("Feature is available from build 1212");
+                ConsoleInfo.Error("Feature is available from build 3112");
 
-            } else {
+            } else  ​if​ (​input​ ​==​ ​"​ls​"​) 
+ ​           { 
+ ​                ​var​ ​directory_list​ ​=​ ​Directory​.​GetFiles​(​@"​0:​\system\mnt"​); 
+ ​                ​foreach​ (​var​ ​file​ ​in​ ​directory_list​) 
+ ​                { 
+ ​                    ​Console​.​WriteLine​(​file​); 
+ ​                } 
+ ​            }  
+ ​            ​if​ (​input​ ​==​ ​"​mk​file"​) 
+ ​            { 
+ ​                ​Console​.​Write​(​"​File name with extension: ​"​); 
+ ​                ​string​ ​filename​ ​=​ ​Console​.​ReadLine​(); 
+  
+ ​                ​try 
+ ​                { 
+ ​                    ​var​ ​file_stream​ ​=​ ​File​.​Create​(​@"​0:​\system\mnt\"​ ​+​ ​filename​); 
+ ​                } 
+ ​                ​catch​ (​Exception​ ​e​) 
+ ​                { 
+ ​                    ​Console​.​WriteLine​(​e​.​ToString​()); 
+ ​                } 
+ ​                ​Console​.​WriteLine​(​"​File successfully created​"​); 
+ ​            } else {
               ConsoleInfo.Error("Command not Found");
             }
         }
