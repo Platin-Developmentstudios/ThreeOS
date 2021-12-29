@@ -19,7 +19,7 @@ namespace ThreeOS.System.ConsoleTools
          Console.WriteLine("");
          Console.ForegroundColor = ConsoleColor.DarkCyan;
          Console.WriteLine("  ------------------------------------------------------------------  ", ConsoleColor.Magenta);
-         Console.WriteLine("  |    Beta Version 1112  |   Created By Platin Developmentstudios |  ", ConsoleColor.Magenta);
+         Console.WriteLine("  |    Beta Version 2912  |   Created By Platin Developmentstudios |  ", ConsoleColor.Magenta);
          Console.WriteLine("  ------------------------------------------------------------------  ", ConsoleColor.Magenta);
          Console.WriteLine("", ConsoleColor.Green);
          Console.ForegroundColor = ConsoleColor.White;
