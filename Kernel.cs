@@ -75,12 +75,15 @@ namespace ThreeOS
             {
             
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("---------------------------------------------------");
-                Console.WriteLine("| sysinfo    | Show infos about the ThreeOS build |");
-                Console.WriteLine("| clear      | Clear the Console                  |");
-                Console.WriteLine("| shutdown   | Shut down the PC                   |");
-                Console.WriteLine("| restart    | Restart the PC                     |");
-                Console.WriteLine("---------------------------------------------------");
+                Console.WriteLine("-----------------------------------------------------");
+                Console.WriteLine("| sysinfo    | Show infos about the ThreeOS build   |");
+                Console.WriteLine("| clear      | Clear the Console                    |");
+                Console.WriteLine("| shutdown   | Shut down the PC                     |");
+                Console.WriteLine("| restart    | Restart the PC                       |");
+                Console.WriteLine("| cd         | Change the Current dir               |");
+                Console.WriteLine("| ls         | List all files in a dir              |");
+                Console.WriteLine("| mkfile     | Create a new file in the current dir |");
+                Console.WriteLine("-----------------------------------------------------");
 
             } else if (input == "sysinfo")
             {
