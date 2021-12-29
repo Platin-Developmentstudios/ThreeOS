@@ -170,9 +170,10 @@ namespace ThreeOS
                          var directory_stream = Directory.Create(CurrentDirectory + dirname);
                      }
                      catch(Exception e)
-                     {
-                          Console.WriteLine(e.ToString());
+                     {
+                          Console.WriteLine(e.ToString());
                      }
+                     Console​.​WriteLine​(​"​Directory successfully created​"​); 
                  } else {
                      Console.WriteLine("This Directory does already exists!");
                  }
