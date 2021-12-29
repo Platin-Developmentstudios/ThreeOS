@@ -126,9 +126,8 @@ namespace ThreeOS
 
             } else if (input == "cd")
             {
-
-                Console.WriteLine("Enter the Path to the Directory");
-                string dirPath = Console.ReadLine();
+
+                string dirPath = input.Remove(0, 3);
                 if (!Directory.Exists(dirPath))
                 {
                     Console.WriteLine("This Directory doesnt exist!");
@@ -138,44 +137,56 @@ namespace ThreeOS
 
             } else if​ (​input​ ​==​ ​"​ls​"​) 
  ​           { 
- ​                ​var​ ​directory_list​ ​=​ ​Directory​.​GetFiles​(​CurrentDirectory); 
- ​                ​foreach​ (​var​ ​file​ ​in​ ​directory_list​) 
+                 
+ ​                var​ ​directory_list​ ​=​ ​Directory​.​GetFiles​(​CurrentDirectory); 
+ ​                foreach​ (​var​ ​file​ ​in​ ​directory_list​) 
  ​                { 
- ​                    ​Console​.​WriteLine​(​file​); 
- ​                } 
+ ​                    ​Console​.​WriteLine​(​file​);
+ ​                } 
 
  ​            } else if​ (​input​ ​==​ ​"​mk​file"​) 
- ​            { 
- ​                ​Console​.​Write​(​"​File name with extension: ​"​); 
- ​                ​string​ ​filename​ ​=​ ​Console​.​ReadLine​(); 
-  
- ​                ​try 
- ​                { 
- ​                    ​var​ ​file_stream​ ​=​ ​File​.​Create(CurrentDirectory ​+​ ​filename​); 
- ​                } 
- ​                ​catch​ (​Exception​ ​e​) 
- ​                { 
- ​                    ​Console​.​WriteLine​(​e​.​ToString​()); 
- ​                } 
- ​                ​Console​.​WriteLine​(​"​File successfully created​"​); 
+ ​            { 
+ ​                ​string​ ​filename = input.Remove(0, 7);
+                 if (filename == "")
+                 {
+                     Console.WriteLine("Please enter an Filename");
+                 } else
+                 {
+ ​                ​    try 
+ ​                    { 
+ ​                    ​    var​ ​file_stream​ ​=​ ​File​.​Create(CurrentDirectory ​+​ ​filename​); 
+ ​                    } 
+ ​                ​    catch​ (​Exception​ ​e​) 
+ ​                    { 
+ ​                    ​    Console​.​WriteLine​(​e​.​ToString​()); 
+ ​                    } 
+ ​                ​    Console​.​WriteLine​(​"​File successfully created​"​); 
+                 }
 
  ​            } else if (input == "mkdir")
-             {
-                 Console.WriteLine("Directory Name:");
-                 string dirname = Console.ReadLine();
-                 if (!Directory.Exists(dirname))
+             {
+                 string dirname = input.Remove(0, 6);
+                 if (input == "")
                  {
-                     try
+                     Console.WriteLine("Please enter an dir name!");
+                 } else
+                 {
+                     if (!Directory.Exists(dirname))
                      {
-                         var directory_stream = Directory.Create(CurrentDirectory + dirname);
+                         try
+                         {
+                             var directory_stream = Directory.Create(CurrentDirectory + dirname);
+                         }
+                         catch(Exception e)
+                         {
+
+                              Console.WriteLine(e.ToString());
+
+                         }
+                         Console​.​WriteLine​(​"​Directory successfully created​"​); 
+                     } else {
+                         Console.WriteLine("This Directory does already exists!");
                      }
-                     catch(Exception e)
-                     {
-                          Console.WriteLine(e.ToString());
-                     }
-                     Console​.​WriteLine​(​"​Directory successfully created​"​); 
-                 } else {
-                     Console.WriteLine("This Directory does already exists!");
                  }
              } else {
                 ConsoleInfo.Error("Command not Found");
