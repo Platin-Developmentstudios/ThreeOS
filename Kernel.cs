@@ -126,8 +126,9 @@ namespace ThreeOS
             } else if (input == "cd")
             {
 
-                // Work in Progress
-                ConsoleInfo.Error("Feature is available from build 3112");
+                Console.WriteLine("Enter the Path to the Directory");
+                string dirPath = Console.ReadLine();
+                CurrentDirectory = dirPath;
 
             } else if​ (​input​ ​==​ ​"​ls​"​) 
  ​           { 
@@ -143,7 +144,7 @@ namespace ThreeOS
   
  ​                ​try 
  ​                { 
- ​                    ​var​ ​file_stream​ ​=​ ​File​.​CreaCreate(CurrentDirectory ​+​ ​filename​); 
+ ​                    ​var​ ​file_stream​ ​=​ ​File​.​Create(CurrentDirectory ​+​ ​filename​); 
  ​                } 
  ​                ​catch​ (​Exception​ ​e​) 
  ​                { 
