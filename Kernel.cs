@@ -83,6 +83,7 @@ namespace ThreeOS
                 Console.WriteLine("| cd         | Change the Current dir               |");
                 Console.WriteLine("| ls         | List all files in a dir              |");
                 Console.WriteLine("| mkfile     | Create a new file in the current dir |");
+                Console.WriteLine("| mkdir      | Create a new dir in the current dir  |");
                 Console.WriteLine("-----------------------------------------------------");
 
             } else if (input == "sysinfo")
@@ -156,8 +157,27 @@ namespace ThreeOS
  ​                    ​Console​.​WriteLine​(​e​.​ToString​()); 
  ​                } 
  ​                ​Console​.​WriteLine​(​"​File successfully created​"​); 
- ​            } else {
-              ConsoleInfo.Error("Command not Found");
+ ​            } else if (input == "mkdir")
+             {
+                 Console.WriteLine("Directory Name:");
+                 string dirname = Console.ReadLine();
+                 if (!Directory.Exists(dirname))
+                 {
+                     try
+                     {
+                         var directory_stream = Directory.Create(CurrentDirectory + dirname);
+                     }
+                     catch(Exception e)
+                     {
+
+                          Console.WriteLine(e.ToString());
+
+                     }
+                 } else {
+                     Console.WriteLine("This Directory does already exists!");
+                 }
+             } else {
+                ConsoleInfo.Error("Command not Found");
             }
         }
     }
