@@ -65,7 +65,7 @@ namespace ThreeOS
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(" > ");
 
-            var input = Console.ReadLine()
+            var input = Console.ReadLine();
             
             switch(input) {
                 
