@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Collections.Generic;
 using ThreeOS.System.ConsoleTools;
 using Sys = Cosmos.System;
-using Cosmos.System.Graphics
+using Cosmos.System.Graphics;
 
 namespace ThreeOS
 {
