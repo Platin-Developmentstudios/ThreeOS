@@ -4,6 +4,7 @@ using System.Text;
 using System.Drawing;
 using System.Collections.Generic;
 using ThreeOS.System.ConsoleTools;
+using ThreeOS.System.ThreeScript;
 using Sys = Cosmos.System;
 using Cosmos.System.Graphics;
 
@@ -15,7 +16,7 @@ namespace ThreeOS
         public static string CurrentDirectory = @"0:\system\mnt\";
         public static string ComputerName = "ThreeOS";
         public static string CurrentUser = "Admin";
-        public static string BuildVer = "30122021";
+        public static string BuildVer = "31122021";
 
         protected override void BeforeRun() {
 
@@ -80,6 +81,8 @@ namespace ThreeOS
                     Console.WriteLine("| ls         | List all files in a dir              |");
                     Console.WriteLine("| mkfile     | Create a new file in the current dir |");
                     Console.WriteLine("| mkdir      | Create a new dir in the current dir  |");
+                    Console.WriteLine("| run        | Run a ThreeScript File               |");
+                    Console.WriteLine("| echo       | Print text to the Console            |")
                     Console.WriteLine("-----------------------------------------------------");
                     break;
                     
@@ -88,7 +91,7 @@ namespace ThreeOS
                     Console.WriteLine("--------------------------------");
                     Console.WriteLine("| User      | Admin            |");
                     Console.WriteLine("| OS        | ThreeOS Beta     |");
-                    Console.WriteLine("| Version   | Build 30122021   |");
+                    Console.WriteLine("| Version   | Build 31122021   |");
                     Console.WriteLine("--------------------------------");
                     Console.WriteLine(" ");
                     Console.WriteLine("Hardware:");
@@ -167,6 +170,20 @@ namespace ThreeOS
                             ConsoleInfo.Error("This Directory already exists!");
                         }
                     }
+                    break;
+                    
+                case "run":
+                    string TScriptPath = input.Remove(0, 4);
+                    if(TScriptPath == "") {
+                        ConsoleInfo.Error("Not a valid ThreeScript File!");
+                    } else {
+                        TScriptEngine.Execute(TScriptPath);
+                    }
+                    break;
+                    
+                case "echo":
+                    string echoString = input.Remove(0, 5);
+                    Console.WriteLine(echoString);
                     break;
                 
                 default:
