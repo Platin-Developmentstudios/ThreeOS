@@ -16,7 +16,7 @@ namespace ThreeOS
         public static string CurrentDirectory = @"0:\system\mnt\";
         public static string ComputerName = "ThreeOS";
         public static string CurrentUser = "Admin";
-        public static string BuildVer = "31122021";
+        public static string BuildVer = "01012022";
 
         protected override void BeforeRun() {
 
@@ -91,7 +91,7 @@ namespace ThreeOS
                     Console.WriteLine("--------------------------------");
                     Console.WriteLine("| User      | Admin            |");
                     Console.WriteLine("| OS        | ThreeOS Beta     |");
-                    Console.WriteLine("| Version   | Build 31122021   |");
+                    Console.WriteLine("| Version   | Build 01012022   |");
                     Console.WriteLine("--------------------------------");
                     Console.WriteLine(" ");
                     Console.WriteLine("Hardware:");
