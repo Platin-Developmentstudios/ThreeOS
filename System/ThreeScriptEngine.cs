@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Text;
 using ThreeOS.System.ConsoleTools;
+using ThreeOS.System.ThreeScript.CMD;
 
 namespace ThreeOS.System.ThreeScript {
     internal class TScriptEngine {
@@ -14,8 +15,12 @@ namespace ThreeOS.System.ThreeScript {
                             switch(line.StartsWith()) {
                                 case "echo":
                                     var echoContent = line.Remove(0, 5);
-                                    Console.WriteLine(echoContent);
+                                    TScriptCmdManager.EchoCMD(echoContent);
                                     break;
+                                    
+                                case "run":
+                                    var runFile = line.Remove(0, 4);
+                                    TScriptCmdManager.RunCMD(runFile)
                                     
                                 default:
                                     break;
