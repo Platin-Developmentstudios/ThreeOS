@@ -81,7 +81,7 @@ namespace ThreeOS
                 Console.WriteLine("| mkfile     | Create a new file in the current dir |");
                 Console.WriteLine("| mkdir      | Create a new dir in the current dir  |");
                 Console.WriteLine("| run        | Run a ThreeScript File               |");
-                Console.WriteLine("| echo       | Print text to the Console            |")
+                Console.WriteLine("| echo       | Print text to the Console            |");
                 Console.WriteLine("-----------------------------------------------------");
                     
             } else if(input.StartsWith("sysinfo")) {
