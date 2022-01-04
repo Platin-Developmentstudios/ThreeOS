@@ -68,7 +68,7 @@ namespace ThreeOS
 
             var input = Console.ReadLine();
             
-            if(input.StartsWith("help") {
+            if(input.StartsWith("help")) {
                 
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("-----------------------------------------------------");
