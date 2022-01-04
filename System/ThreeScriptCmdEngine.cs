@@ -8,17 +8,25 @@ using ThreeOS.System.ThreeScript;
 using Sys = Cosmos.System;
 
 namespace ThreeOS.System.ThreeScript.CMD {
+    
     internal class TScriptCmdManager {
         
-        public static void EchoCMD(var echoString) {
+        public static void EchoCMD(string echoString) {
+            
             Console.WriteLine(echoString);
+            
         }
         
-        public static void RunCMD(var runPath) {
+        public static void RunCMD(string runPath) {
+            
             if(runPath == "") {
+                
                 ConsoleInfo.Error("Not a valid ThreeScript File!");
+                
             } else {
+                
                 TScriptEngine.Execute(TScriptPath);
+                
             }
         }
         
