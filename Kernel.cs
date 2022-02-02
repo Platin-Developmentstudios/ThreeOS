@@ -16,7 +16,7 @@ namespace ThreeOS
         public static string CurrentDirectory = @"0:\system\mnt\";
         public static string ComputerName = "ThreeOS";
         public static string CurrentUser = "Admin";
-        public static string BuildVer = "04012022";
+        public static string BuildVer = "02022022";
 
         protected override void BeforeRun() {
 
@@ -82,6 +82,7 @@ namespace ThreeOS
                 Console.WriteLine("| mkdir      | Create a new dir in the current dir  |");
                 Console.WriteLine("| run        | Run a ThreeScript File               |");
                 Console.WriteLine("| echo       | Print text to the Console            |");
+                Console.WriteLine("| rm [-r]    | Remove a file or Directory [rm -r]   |");
                 Console.WriteLine("-----------------------------------------------------");
                     
             } else if(input.StartsWith("sysinfo")) {
@@ -90,7 +91,7 @@ namespace ThreeOS
                 Console.WriteLine("--------------------------------");
                 Console.WriteLine("| User      | Admin            |");
                 Console.WriteLine("| OS        | ThreeOS Beta     |");
-                Console.WriteLine("| Version   | Build 04012022   |");
+                Console.WriteLine("| Version   | Build 02022022   |");
                 Console.WriteLine("--------------------------------");
                 Console.WriteLine(" ");
                 Console.WriteLine("Hardware:");
@@ -179,6 +180,20 @@ namespace ThreeOS
                 string echoString = input.Remove(0, 5);
                 Console.WriteLine(echoString);
                     
+            } else if(input.StartsWith("rm")) {
+                
+                string rmArgsFunc = input.Remove(0, 3);
+                string rmArgsPath = input.Remove(0, 6);
+                if(rmArgsFunc == "-r") {
+                    if(rmArgsPath == "") {
+                        ConsoleInfo.Error("Please enter a Path");
+                    } else {
+                        Directory.Remove(rmArgsPath);
+                    }
+                } else {
+                    File.Remove(rmArgsFunc);
+                }
+                
             } else {
             
                 ConsoleInfo.Error("Command not Found");
