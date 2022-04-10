@@ -3,8 +3,8 @@ using System.IO;
 using System.Text;
 using System.Drawing;
 using System.Collections.Generic;
-using ThreeOS.System.ConsoleTools;
-using ThreeOS.System.ThreeScript;
+using ThreeOS.System64.ConsoleTools;
+using ThreeOS.System64.ThreeScript;
 using Sys = Cosmos.System;
 using Cosmos.System.Graphics;
 
@@ -16,7 +16,7 @@ namespace ThreeOS
         public static string CurrentDirectory = @"0:\system\mnt\";
         public static string ComputerName = "ThreeOS";
         public static string CurrentUser = "Admin";
-        public static string BuildVer = "02022022";
+        public static string BuildVer = "10042022";
 
         protected override void BeforeRun() {
 
@@ -129,7 +129,7 @@ namespace ThreeOS
                     
             } else if(input.StartsWith("ls")) {
                 
-                string directory_list = Directory.GetFiles(CurrentDirectory);
+                string[] directory_list = Directory.GetFiles(CurrentDirectory);
                 foreach(var file in directory_list) {
                     Console.WriteLine(file);
                 }
@@ -149,13 +149,14 @@ namespace ThreeOS
                 }
                     
             } else if(input.StartsWith("mkdir")) {
-                
+
+                string dirname = input.Remove(0, 6);
                 if (input == "") {
                     Console.WriteLine("Please enter an dir name!");
                 } else {
                     if(!Directory.Exists(dirname)) {
                         try {
-                            var directory_stream = Directory.Create(CurrentDirectory + dirname);
+                            var directory_stream = Directory.CreateDirectory(CurrentDirectory + dirname);
                         }
                         catch(Exception e) {
                             ConsoleInfo.Error(e.ToString());
@@ -188,10 +189,10 @@ namespace ThreeOS
                     if(rmArgsPath == "") {
                         ConsoleInfo.Error("Please enter a Path");
                     } else {
-                        Directory.Remove(rmArgsPath);
+                        Directory.Delete(rmArgsPath);
                     }
                 } else {
-                    File.Remove(rmArgsFunc);
+                    File.Delete(rmArgsFunc);
                 }
                 
             } else {
