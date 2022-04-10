@@ -1,10 +1,10 @@
 using System;
 using System.IO;
 using System.Text;
-using ThreeOS.System.ConsoleTools;
-using ThreeOS.System.ThreeScript.CMD;
+using ThreeOS.System64.ConsoleTools;
+using ThreeOS.System64.ThreeScript.CMD;
 
-namespace ThreeOS.System.ThreeScript {
+namespace ThreeOS.System64.ThreeScript {
     
     internal class TScriptEngine {
         
@@ -14,7 +14,7 @@ namespace ThreeOS.System.ThreeScript {
                 
                 if((filename.EndsWith(".ths")) || (filename.EndsWith(".threescript"))) {
                     
-                    string[] lines = file.ReadAllLines(filename);
+                    string[] lines = File.ReadAllLines(filename);
                     foreach(string line in lines) {
                         
                         if(!(line.StartsWith("|"))) {

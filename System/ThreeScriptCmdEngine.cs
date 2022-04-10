@@ -3,11 +3,11 @@ using System.IO;
 using System.Text;
 using System.Drawing;
 using System.Collections.Generic;
-using ThreeOS.System.ConsoleTools;
-using ThreeOS.System.ThreeScript;
+using ThreeOS.System64.ConsoleTools;
+using ThreeOS.System64.ThreeScript;
 using Sys = Cosmos.System;
 
-namespace ThreeOS.System.ThreeScript.CMD {
+namespace ThreeOS.System64.ThreeScript.CMD {
     
     internal class TScriptCmdManager {
         
@@ -25,7 +25,7 @@ namespace ThreeOS.System.ThreeScript.CMD {
                 
             } else {
                 
-                TScriptEngine.Execute(TScriptPath);
+                TScriptEngine.Execute(runPath);
                 
             }
         }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace ThreeOS.System.ConsoleTools
+namespace ThreeOS.System64.ConsoleTools
 {
   internal class ConsoleUtils
   {
@@ -19,7 +19,7 @@ namespace ThreeOS.System.ConsoleTools
          Console.WriteLine("");
          Console.ForegroundColor = ConsoleColor.DarkCyan;
          Console.WriteLine("  ------------------------------------------------------------------  ", ConsoleColor.Magenta);
-         Console.WriteLine("  |  Beta Build 02022022  |   Created By Platin Developmentstudios |  ", ConsoleColor.Magenta);
+         Console.WriteLine("  |  Beta Build 10042022  |   Created By Platin Developmentstudios |  ", ConsoleColor.Magenta);
          Console.WriteLine("  ------------------------------------------------------------------  ", ConsoleColor.Magenta);
          Console.WriteLine("", ConsoleColor.Green);
          Console.ForegroundColor = ConsoleColor.White;
