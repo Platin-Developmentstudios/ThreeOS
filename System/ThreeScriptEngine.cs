@@ -39,9 +39,7 @@ namespace ThreeOS.TSystem.ThreeScript {
 
                                 TScriptCmdManager.ClearCMD();
 
-                            }
-
-                            }  else {
+                            } else {
 
                                 Console.WriteLine("> INT <");
 
