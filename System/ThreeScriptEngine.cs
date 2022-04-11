@@ -1,10 +1,10 @@
 using System;
 using System.IO;
 using System.Text;
-using ThreeOS.System64.ConsoleTools;
-using ThreeOS.System64.ThreeScript.CMD;
+using ThreeOS.TSystem.ConsoleTools;
+using ThreeOS.TSystem.ThreeScript.CMD;
 
-namespace ThreeOS.System64.ThreeScript {
+namespace ThreeOS.TSystem.ThreeScript {
     
     internal class TScriptEngine {
         
@@ -29,10 +29,22 @@ namespace ThreeOS.System64.ThreeScript {
                                 var runFile = line.Remove(0, 4);
                                 TScriptCmdManager.RunCMD(runFile);
                                     
-                            } else {
-                                
+                            } if (line.StartsWith("mkfile"))
+                            {
+
+                                var mkfilep = line.Remove(0, 7);
+                                TScriptCmdManager.MkfileCMD(mkfilep);
+
+                            } if (line.StartsWith("clear")) {
+
+                                TScriptCmdManager.ClearCMD();
+
+                            }
+
+                            }  else {
+
                                 Console.WriteLine("> INT <");
-                                
+
                             }
                         }
                     }
