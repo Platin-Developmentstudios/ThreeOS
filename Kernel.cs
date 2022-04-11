@@ -3,8 +3,8 @@ using System.IO;
 using System.Text;
 using System.Drawing;
 using System.Collections.Generic;
-using ThreeOS.System64.ConsoleTools;
-using ThreeOS.System64.ThreeScript;
+using ThreeOS.TSystem.ConsoleTools;
+using ThreeOS.TSystem.ThreeScript;
 using Sys = Cosmos.System;
 using Cosmos.System.Graphics;
 
@@ -13,10 +13,10 @@ namespace ThreeOS
     public class Kernel: Sys.Kernel
     {
 
-        public static string CurrentDirectory = @"0:\system\mnt\";
+        public static string CurrentDirectory = @"0:\system";
         public static string ComputerName = "ThreeOS";
         public static string CurrentUser = "Admin";
-        public static string BuildVer = "10042022";
+        public static string BuildVer = "11042022";
 
         protected override void BeforeRun() {
 
