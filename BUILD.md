@@ -2,13 +2,13 @@
 <hr /> <br />
 
 > You need:
->> Visual Studio 2019, <br />Cosmos from Nuget, <br />VMWare Player
+>> Visual Studio 2019, <br />Cosmos DevKit from gocosmos.org, <br />VMWare Player
 
 ## How to Build ThreeOS:
 <ol>
     <li>Open Visual Studio 2019</li>
     <li>Load ThreeOS as a Project</li>
-    <li>(If you dont have it) Download Cosmos with Nuget</li>
+    <li>(If you dont have it) Get the Cosmos Devkit from gocosmos.org</li>
     <li>Click "Compile"</li>
 </ol>
 <br />
