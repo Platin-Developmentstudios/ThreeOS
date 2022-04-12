@@ -8,6 +8,7 @@ using ThreeOS.TSystem.ThreeScript;
 using ThreeOS.TSystem.CMDManager;
 using Sys = Cosmos.System;
 using Cosmos.System.Graphics;
+using ThreeOS.TSystem.VersionUtils;
 
 namespace ThreeOS.TSystem.KernelUtils
 {
@@ -16,7 +17,7 @@ namespace ThreeOS.TSystem.KernelUtils
         public static string CurrentDirectory = Kernel.CurrentDirectory;
         public static string CurrentUser = Kernel.CurrentUser;
         public static string ComputerName = Kernel.ComputerName;
-        public static string BuildVersion = Kernel.BuildVer;
+        public static string BuildVersion = VersionInfo.BuildVersion;
     }
 
     internal class BootUtils

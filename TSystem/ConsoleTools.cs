@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using ThreeOS.TSystem.VersionUtils;
 
 namespace ThreeOS.TSystem.ConsoleTools
 {
@@ -19,7 +20,7 @@ namespace ThreeOS.TSystem.ConsoleTools
          Console.WriteLine("");
          Console.ForegroundColor = ConsoleColor.DarkCyan;
          Console.WriteLine("  ------------------------------------------------------------------  ", ConsoleColor.Magenta);
-         Console.WriteLine("  |  Beta Build 12042022  |  Created By Platin Developmentstudios  |  ", ConsoleColor.Magenta);
+         Console.WriteLine($"  |  Beta Build {VersionInfo.BuildVersion}  |  Created By Platin Developmentstudios  |  ", ConsoleColor.Magenta);
          Console.WriteLine("  ------------------------------------------------------------------  ", ConsoleColor.Magenta);
          Console.WriteLine("", ConsoleColor.Green);
          Console.ForegroundColor = ConsoleColor.White;

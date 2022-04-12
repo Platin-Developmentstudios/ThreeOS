@@ -7,6 +7,8 @@ using ThreeOS.TSystem.ConsoleTools;
 using ThreeOS.TSystem.ThreeScript;
 using ThreeOS.TSystem.CMDManager;
 using ThreeOS.TSystem.KernelUtils;
+using ThreeOS.TSystem.VersionUtils;
+using ThreeOS.TSystem.TNetworkManager;
 using Sys = Cosmos.System;
 using Cosmos.System.Graphics;
 
@@ -18,7 +20,7 @@ namespace ThreeOS
         public static string CurrentDirectory = @"0:\system";
         public static string CurrentUser = "Admin";
         public static string ComputerName = "ThreeOS";
-        public static string BuildVer = "12042022";
+        public static string BuildVer = VersionInfo.BuildVersion;
 
         protected override void BeforeRun() {
 

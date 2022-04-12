@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Collections.Generic;
 using ThreeOS.TSystem.ConsoleTools;
 using ThreeOS.TSystem.ThreeScript;
+using ThreeOS.TSystem.VersionUtils;
 using Sys = Cosmos.System;
 using Cosmos.System.Graphics;
 
@@ -37,7 +38,7 @@ namespace ThreeOS.TSystem.CMDManager {
             Console.WriteLine("--------------------------------");
             Console.WriteLine("| User      | Admin            |");
             Console.WriteLine("| OS        | ThreeOS Beta     |");
-            Console.WriteLine("| Version   | Build 12042022   |");
+            Console.WriteLine($"| Version   | Build {VersionInfo.BuildVersion}   |");
             Console.WriteLine("--------------------------------");
             Console.WriteLine(" ");
             Console.WriteLine("Hardware:");
