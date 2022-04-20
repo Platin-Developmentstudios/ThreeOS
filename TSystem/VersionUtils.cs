@@ -8,8 +8,8 @@ namespace ThreeOS.TSystem.VersionUtils
 {
     internal class VersionInfo
     {
-        public static string BuildVersion = "13042022";
-        public static string RevisionVersion = "130420224854473";
-        public static string ReleaseVersion = "13.2022.04";
+        public static string BuildVersion = "20042022";
+        public static string PublicVersion = "Beta 1.0.0.0";
+        public static string InternalReleaseVersion = "20.2022.04";
     }
 }
