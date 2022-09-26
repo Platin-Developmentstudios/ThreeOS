@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using ThreeOS.TSystem.ConsoleTools;
 using ThreeOS.TSystem.ThreeScript;
 using ThreeOS.TSystem.VersionUtils;
-using ThreeOS.TSystem.CrashHandler;
 using Sys = Cosmos.System;
 using Cosmos.System.Graphics;
 
@@ -163,11 +162,6 @@ namespace ThreeOS.TSystem.CMDManager {
 
             Console.WriteLine(message);
 
-        }
-
-        public static void ErrorCMD()
-        {
-            CrashManager.ShowCrashScreen("Controlled Crashing", "0x002844828384");
         }
 
     }
