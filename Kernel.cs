@@ -16,13 +16,15 @@ namespace ThreeOS
     public class Kernel: Sys.Kernel
     {
 
-        public static string CurrentDirectory = "0:\\system";
+        public static string CurrentDirectory = @"0:\system";
         public static string CurrentUser = "Admin";
         public static string ComputerName = "ThreeOS";
         public static string BuildVer = VersionInfo.BuildVersion;
+        TFS.createTFS(); 
         
-        // Initialize ThreeFS
-        TFS.initTFS()
+        protected override void BeforeRun() {
+            TFS.initTFS();
+        }
         
         protected override void Run() {
 
